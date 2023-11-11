@@ -25,14 +25,14 @@ inquirer.prompt(
         'Honda Civic Si',
         'Nissan GTR',
         'Fiat Punto T-Jet',
-        'Volkswagen Golf'
+        'Volkswagen Golf',
       ]
     }
   ]
 ).then((answers) => {
   console.log(
-    "Olá " + answers.name +
-    "pelo valor de " + answers.dinheiro +
+    " Olá " + answers.nome +
+    " pelo valor de " + answers.dinheiro +
     "seu carro é: " + answers.carro
   )
 })
