@@ -1,0 +1,16 @@
+{
+  "name": "init-npm",
+  "version": "1.0.0",
+  "description": "demo folder npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "icaro",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^9.2.12",
+    "path": "^0.12.7"
+  }
+}
