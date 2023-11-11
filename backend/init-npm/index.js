@@ -32,7 +32,7 @@ inquirer.prompt(
 ).then((answers) => {
   console.log(
     " Olá " + answers.nome +
-    " pelo valor de " + answers.dinheiro +
-    "seu carro é: " + answers.carro
+    " pelo valor de R$" + answers.dinheiro + " reais" +
+    " seu carro é: " + answers.carro
   )
 })
