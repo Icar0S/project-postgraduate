@@ -1,7 +1,7 @@
 import express from "express";
 import userService from "../services/UserService.js";
 import multer from "multer";
-import process from "process";
+import process, { emitWarning } from "process";
 
 let router = express.Router();
 
@@ -23,6 +23,7 @@ router.post("/addUser", async function (req, res) {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       email: req.body.email,
+      phone: req.body.phone,
       gender: req.body.gender,
       profile_picture: req.file.path
     }
@@ -66,6 +67,7 @@ router.put("/updateUser/:id", async function (req, res) {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       email: req.body.email,
+      phone: req.body.phone,
       gender: req.body.gender,
       profile_picture: req.file.path
     }

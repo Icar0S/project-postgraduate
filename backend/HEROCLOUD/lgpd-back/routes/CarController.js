@@ -6,6 +6,7 @@ let router = express.Router();
 router.post("/addCar", function (req, res) {
   const carModel = {
     name: req.body.name,
+    old: req.body.old
   }
   const car = carService.saveCar(carModel);
   return res.status(201).json(car);
