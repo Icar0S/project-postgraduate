@@ -2,7 +2,7 @@ import express from "express";
 let router = express.Router();
 import userController from "./UserController.js";
 import sellerController from "./SellerController.js";
-import evaluationController from "./EvaluationController.js";
+import purchaseController from "./PurchaseController.js";
 import carController from "./CarController.js";
 
 router.get("/", function (req, res) {
@@ -12,7 +12,7 @@ router.get("/", function (req, res) {
 
 router.use("/", userController);
 router.use("/", sellerController);
-router.use("/", evaluationController);
+router.use("/", purchaseController);
 router.use("/", carController);
 
 export default router;

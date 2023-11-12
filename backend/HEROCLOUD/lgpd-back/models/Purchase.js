@@ -8,8 +8,12 @@ const Purchase = sequelize.define('purchase', {
     allowNull: false,
     primaryKey: true
   },
-  concept: {
+  value: {
     type: DataTypes.STRING,
+    allowNull: false,
+  },
+  date: {
+    type: DataTypes.DATE,
     allowNull: false,
   }
 }, { underscored: true });

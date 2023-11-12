@@ -1,7 +1,39 @@
 import express from "express";
+import carService from "../services/CarService.js";
 
-let route = express.Router();
+let router = express.Router();
 
-import carService from '../services/CarService';
+router.post("/addCar", function (req, res) {
+  const carModel = {
+    name: req.body.name,
+  }
+  const car = carService.saveCar(carModel);
+  return res.status(201).json(car);
+});
 
-export default Router;
+router.get("/getAllCars", async function (req, res) {
+  const allCars = await carService.getAllCars();
+  return res.status(200).json(allCars);
+});
+
+router.get("/car/:id", async function (req, res) {
+  const car = await carService.getCarById(req.params.id);
+  return res.status(200).json(car);
+});
+
+router.delete("/deleteCar/:id", async function (req, res) {
+  const car = await carService.deleteCarById(req.params.id);
+  return res.status(200).json(car);
+});
+
+router.put("/updateCar/:id", async function (req, res) {
+  const carModel = {
+    name: req.body.name,
+  };
+
+  const car = await carService.updateCarById(req.params.id, carModel);
+  return res.status(200).json(car);
+});
+
+
+export default router;
