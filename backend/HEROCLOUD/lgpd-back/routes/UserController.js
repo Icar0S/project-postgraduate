@@ -1,7 +1,7 @@
 import express from "express";
 import userService from "../services/UserService.js";
 import multer from "multer";
-import process, { emitWarning } from "process";
+import process from "process";
 
 let router = express.Router();
 
