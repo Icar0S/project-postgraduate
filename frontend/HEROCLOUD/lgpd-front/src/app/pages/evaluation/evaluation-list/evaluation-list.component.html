@@ -5,7 +5,7 @@
   </div>
   <div class="row">
     <div class="col-12 d-flex align-content-end justify-content-end pb-5">
-      <a class="btn btn-primary" [href]="'/addEvaluation'">CADASTRAR VENDA</a>
+      <a class="btn btn-primary" [href]="'/addPurchase'">CADASTRAR VENDA</a>
     </div>
   </div>
   <div class="row">
@@ -20,17 +20,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let evaluation of evaluations">
-            <th scope="row">{{evaluation.id}}</th>
-            <td>{{evaluation.user_id}}</td>
-            <td>{{evaluation.course_id}}</td>
-            <td>{{evaluation.concept}}</td>
+          <tr *ngFor="let purchase of purchases">
+            <th scope="row">{{purchase.id}}</th>
+            <td>{{purchase.user_id}}</td>
+            <td>{{purchase.course_id}}</td>
+            <td>{{purchase.concept}}</td>
             <td>
-              <a class="btn btn-outline-primary" [href]="'/addEvaluation?id='+evaluation.id">
+              <a class="btn btn-outline-primary" [href]="'/addPurchase?id='+purchase.id">
                 <fa-icon [icon]="faPencil"></fa-icon>
               </a>
               <button type="button" class="btn btn-outline-danger" data-toggle="confirmation" data-placement="right"
-                (click)="delete(evaluation.id)">
+                (click)="delete(purchase.id)">
                 <fa-icon [icon]="faTrash"></fa-icon>
               </button>
             </td>

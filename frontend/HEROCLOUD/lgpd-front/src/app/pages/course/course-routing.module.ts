@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 //Add esses imports
-import {CourseFormComponent} from "./course-form/course-form.component";
-import {CourseListComponent} from "./course-list/course-list.component";
+import { CourseFormComponent } from "./course-form/course-form.component";
+import { CourseListComponent } from "./course-list/course-list.component";
 
 
 //Alterar routes para adicionar as rotas /courses e /addCourse
 const routes: Routes = [
   {
-    path: 'courses',
+    path: 'cars',
     component: CourseListComponent
   },
   {
-    path: 'addCourse',
+    path: 'addCar',
     component: CourseFormComponent
   }];
 

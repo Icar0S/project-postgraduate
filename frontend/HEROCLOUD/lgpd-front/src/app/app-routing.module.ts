@@ -25,31 +25,31 @@ const routes: Routes = [
       },
       //Adicionar esses valores
       {
-        path: 'teachers',
+        path: 'sellers',
         component: TeacherListComponent,
         loadChildren: () => import('./pages/teacher/teacher.module').then((module) => module.TeacherModule)
       },
       {
-        path: 'addTeacher',
+        path: 'addSeller',
         component: TeacherFormComponent
       },
       //Adicionar depois da aula
       {
-        path: 'evaluations',
+        path: 'purchases',
         component: EvaluationListComponent,
         loadChildren: () => import('./pages/evaluation/evaluation.module').then((module) => module.EvaluationModule)
       },
       {
-        path: 'addEvaluation',
+        path: 'addPurchase',
         component: EvaluationFormComponent
       },
       {
-        path: 'courses',
+        path: 'cars',
         component: CourseListComponent,
         loadChildren: () => import('./pages/course/course.module').then((module) => module.CourseModule)
       },
       {
-        path: 'addCourse',
+        path: 'addCar',
         component: CourseFormComponent
       }
     ]

@@ -4,7 +4,7 @@
   </div>
   <div class="row">
     <div class="col-12 d-flex align-content-end justify-content-end pb-5">
-      <a class="btn btn-primary" [href]="'/addCourse'">CADASTRAR CARRO</a>
+      <a class="btn btn-primary" [href]="'/addCar'">CADASTRAR CARRO</a>
     </div>
   </div>
   <div class="row">
@@ -17,15 +17,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let course of courses">
-            <th scope="row">{{course.id}}</th>
-            <td>{{course.name}}</td>
+          <tr *ngFor="let car of cars">
+            <th scope="row">{{car.id}}</th>
+            <td>{{car.name}}</td>
             <td>
-              <a class="btn btn-outline-primary" [href]="'/addCourse?id='+course.id">
+              <a class="btn btn-outline-primary" [href]="'/addCar?id='+car.id">
                 <fa-icon [icon]="faPencil"></fa-icon>
               </a>
               <button type="button" class="btn btn-outline-danger" data-toggle="confirmation" data-placement="right"
-                (click)="delete(course.id)">
+                (click)="delete(car.id)">
                 <fa-icon [icon]="faTrash"></fa-icon>
               </button>
             </td>
