@@ -27,8 +27,8 @@ export class CourseFormComponent {
           key: 'name',
           type: 'input',
           props: {
-            label: 'Nome do Curso',
-            placeholder: 'Nome do Curso',
+            label: 'Nome do Carro',
+            placeholder: 'Nome do Carro',
             required: true,
           },
         }
@@ -83,7 +83,7 @@ export class CourseFormComponent {
       }
 
     }
-    await this.router.navigate(['/car']);
+    await this.router.navigate(['/cars']);
   }
 }
 

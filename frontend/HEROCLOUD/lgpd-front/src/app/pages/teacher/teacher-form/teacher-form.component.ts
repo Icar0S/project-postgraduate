@@ -27,15 +27,15 @@ export class TeacherFormComponent {
           type: 'input',
           props: {
             label: 'Nome',
-            placeholder: 'Nome do Professor',
+            placeholder: 'Nome do Vendedor',
             required: true,
           },
         },
         {
-          key: 'course_id',
+          key: 'car_id',
           type: 'input',
           props: {
-            label: 'Id do Curso',
+            label: 'Id do Carro',
             required: true
           },
         }

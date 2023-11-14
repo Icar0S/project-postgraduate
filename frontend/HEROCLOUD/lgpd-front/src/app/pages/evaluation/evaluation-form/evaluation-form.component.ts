@@ -35,7 +35,7 @@ export class EvaluationFormComponent {
           },
         },
         {
-          key: 'course_id',
+          key: 'car_id',
           type: 'input',
           props: {
             label: 'Id do Curso',
@@ -43,11 +43,11 @@ export class EvaluationFormComponent {
           },
         },
         {
-          key: 'concept',
+          key: 'valor',
           type: 'input',
           props: {
-            label: 'Conceito',
-            placeholder: 'Conceito da Avaliação',
+            label: 'Valor',
+            placeholder: 'Valor do Carro',
             required: true,
           },
         }
@@ -102,6 +102,6 @@ export class EvaluationFormComponent {
       }
 
     }
-    await this.router.navigate(['/Purchases']);
+    await this.router.navigate(['/purchases']);
   }
 }
