@@ -25,7 +25,7 @@ export class TeacherListComponent implements OnInit {
 
   async listTeachers(): Promise<void> {
     this.teachers = await this.teacherService.get<any[]>({
-      url: "http://localhost:3000/getAllTeachers",
+      url: "http://localhost:3000/getAllSellers",
       params: {
 
       }
@@ -35,7 +35,7 @@ export class TeacherListComponent implements OnInit {
   async delete(id: number): Promise<void> {
     if (confirm("Deseja deletar este professor?")) {
       await this.teacherService.delete<any>({
-        url: `http://localhost:3000/deleteTeacher/${id}`,
+        url: `http://localhost:3000/deleteSeller/${id}`,
         params: {
 
         }

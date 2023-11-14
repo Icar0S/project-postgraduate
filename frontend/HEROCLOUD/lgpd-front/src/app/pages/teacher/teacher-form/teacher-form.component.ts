@@ -53,7 +53,7 @@ export class TeacherFormComponent {
     this.route.queryParams.subscribe(async (params: any) => {
       if (params.id !== undefined && params.id !== null) {
         this.teacher = await this.teacherService.get<any>({
-          url: `http://localhost:3000/teacher/${params.id}`,
+          url: `http://localhost:3000/seller/${params.id}`,
           params: {
 
           }
@@ -70,7 +70,7 @@ export class TeacherFormComponent {
     if (this.form.valid) {
       if (this.model?.id !== undefined && this.model?.id !== null) {
         this.teacher = await this.teacherService.put<any>({
-          url: `http://localhost:3000/updateTeacher/${this.model?.id}`,
+          url: `http://localhost:3000/updateSeller/${this.model?.id}`,
           params: {
 
           },
@@ -80,7 +80,7 @@ export class TeacherFormComponent {
       } else {
         delete this.model?.id;
         await this.teacherService.post<any>({
-          url: `http://localhost:3000/addTeacher`,
+          url: `http://localhost:3000/addSeller`,
           params: {
 
           },
@@ -89,6 +89,6 @@ export class TeacherFormComponent {
       }
 
     }
-    await this.router.navigate(['/teachers']);
+    await this.router.navigate(['/sellers']);
   }
 }

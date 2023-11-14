@@ -47,7 +47,7 @@ export class CourseFormComponent {
     this.route.queryParams.subscribe(async (params: any) => {
       if (params.id !== undefined && params.id !== null) {
         this.course = await this.courseService.get<any>({
-          url: `http://localhost:3000/course/${params.id}`,
+          url: `http://localhost:3000/car/${params.id}`,
           params: {
 
           }
@@ -64,7 +64,7 @@ export class CourseFormComponent {
     if (this.form.valid) {
       if (this.model?.id !== undefined && this.model?.id !== null) {
         this.course = await this.courseService.put<any>({
-          url: `http://localhost:3000/updateCourse/${this.model?.id}`,
+          url: `http://localhost:3000/updateCar/${this.model?.id}`,
           params: {
 
           },
@@ -74,7 +74,7 @@ export class CourseFormComponent {
       } else {
         delete this.model?.id;
         await this.courseService.post<any>({
-          url: `http://localhost:3000/addCourse`,
+          url: `http://localhost:3000/addCar`,
           params: {
 
           },
@@ -83,7 +83,7 @@ export class CourseFormComponent {
       }
 
     }
-    await this.router.navigate(['/courses']);
+    await this.router.navigate(['/car']);
   }
 }
 

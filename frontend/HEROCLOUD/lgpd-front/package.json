@@ -24,7 +24,7 @@
     "@ng-bootstrap/ng-bootstrap": "^14.0.0",
     "@ngx-formly/bootstrap": "^6.0.4",
     "@ngx-formly/core": "^6.0.4",
-    "axios": "^1.2.2",
+    "axios": "^1.6.1",
     "bootstrap": "^5.2.3",
     "fullscreen": "^1.1.1",
     "http": "^0.0.1-security",

@@ -9,7 +9,7 @@ import { EvaluationService } from '../evaluation.service';
   templateUrl: './evaluation-list.component.html',
   styleUrls: ['./evaluation-list.component.scss']
 })
-export class EvaluationListComponent implements OnInit{
+export class EvaluationListComponent implements OnInit {
   faPencil = faPencil;
   faTrash = faTrash;
 
@@ -29,7 +29,7 @@ export class EvaluationListComponent implements OnInit{
 
   async listEvaluations(): Promise<void> {
     this.evaluations = await this.evaluationService.get<any[]>({
-      url: "http://localhost:3000/getAllEvaluations",
+      url: "http://localhost:3000/getAllPurchases",
       params: {
 
       }
@@ -39,7 +39,7 @@ export class EvaluationListComponent implements OnInit{
   async delete(id: number): Promise<void> {
     if (confirm("Deseja deletar esta avaliação?")) {
       await this.evaluationService.delete<any>({
-        url: `http://localhost:3000/deleteEvaluation/${id}`,
+        url: `http://localhost:3000/deletePurchase/${id}`,
         params: {
 
         }

@@ -39,8 +39,8 @@ export class SharedService {
             .get("http://localhost:3000/getAllCourses")
             .pipe(
                 map(x => {
-                    Object.values(x).map((_course) => {
-                        let c = { value: _course.id, label: _course.name }
+                    Object.values(x).map((_car) => {
+                        let c = { value: _car.id, label: _car.name }
                         this.courses.push(c);
                     })
                     console.log(x);

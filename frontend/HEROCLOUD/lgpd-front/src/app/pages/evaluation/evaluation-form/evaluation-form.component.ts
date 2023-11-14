@@ -66,7 +66,7 @@ export class EvaluationFormComponent {
     this.route.queryParams.subscribe(async (params: any) => {
       if (params.id !== undefined && params.id !== null) {
         this.evaluation = await this.evaluationService.get<any>({
-          url: `http://localhost:3000/evaluation/${params.id}`,
+          url: `http://localhost:3000/addPurchase/${params.id}`,
           params: {
 
           }
@@ -83,7 +83,7 @@ export class EvaluationFormComponent {
     if (this.form.valid) {
       if (this.model?.id !== undefined && this.model?.id !== null) {
         this.evaluation = await this.evaluationService.put<any>({
-          url: `http://localhost:3000/updateEvaluation/${this.model?.id}`,
+          url: `http://localhost:3000/updatePurchase/${this.model?.id}`,
           params: {
 
           },
@@ -93,7 +93,7 @@ export class EvaluationFormComponent {
       } else {
         delete this.model?.id;
         await this.evaluationService.post<any>({
-          url: `http://localhost:3000/addEvaluation`,
+          url: `http://localhost:3000/addPurchase`,
           params: {
 
           },
@@ -102,6 +102,6 @@ export class EvaluationFormComponent {
       }
 
     }
-    await this.router.navigate(['/evaluations']);
+    await this.router.navigate(['/Purchases']);
   }
 }
