@@ -8,7 +8,7 @@ import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -17,6 +17,8 @@ import { SharedModule } from "./shared/shared.module";
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
