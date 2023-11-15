@@ -12,19 +12,19 @@ export class TeacherListComponent implements OnInit {
   faPencil = faPencil;
   faTrash = faTrash;
 
-  courseLabel: Array<{ value: string, label: string }> = [];
-  teachers: any[] = [];
+  carLabel: Array<{ value: string, label: string }> = [];
+  sellers: any[] = [];
 
   constructor(private teacherService: TeacherService, private sharedService: SharedService) { }
 
   async ngOnInit(): Promise<void> {
     await this.listTeachers();
-    this.sharedService.getCourses().subscribe(course => this.courseLabel = course);
+    this.sharedService.getCourses().subscribe(cars => this.carLabel = cars);
 
   }
 
   async listTeachers(): Promise<void> {
-    this.teachers = await this.teacherService.get<any[]>({
+    this.sellers = await this.teacherService.get<any[]>({
       url: "http://localhost:3000/getAllSellers",
       params: {
 

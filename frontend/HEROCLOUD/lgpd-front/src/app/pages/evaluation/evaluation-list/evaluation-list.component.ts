@@ -14,21 +14,21 @@ export class EvaluationListComponent implements OnInit {
   faTrash = faTrash;
 
   userLabel: Array<{ value: Number, label: String }> = [];
-  courseLabel: Array<{ value: Number, label: String }> = [];
+  carLabel: Array<{ value: Number, label: String }> = [];
 
-  evaluations: any[] = [];
+  purchases: any[] = [];
 
   constructor(private evaluationService: EvaluationService, private sharedService: SharedService) { }
 
   async ngOnInit(): Promise<void> {
     await this.listEvaluations();
     this.sharedService.getUsers().subscribe(user => this.userLabel = user);
-    this.sharedService.getCourses().subscribe(course => this.courseLabel = course);
+    this.sharedService.getCourses().subscribe(car => this.carLabel = car);
 
   }
 
   async listEvaluations(): Promise<void> {
-    this.evaluations = await this.evaluationService.get<any[]>({
+    this.purchases = await this.evaluationService.get<any[]>({
       url: "http://localhost:3000/getAllPurchases",
       params: {
 

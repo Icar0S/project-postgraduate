@@ -19,16 +19,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let addSeller of addSellers">
-            <th scope="row">{{addSeller.id}}</th>
-            <td>{{addSeller.name}}</td>
-            <td>{{addSeller.car_id}}</td>
+          <tr *ngFor="let seller of sellers">
+            <th scope="row">{{seller.id}}</th>
+            <td>{{seller.name}}</td>
+            <td>{{seller.car_id}}</td>
             <td>
               <a class="btn btn-outline-primary" [href]="'/addSeller?id='+seller.id">
                 <fa-icon [icon]="faPencil"></fa-icon>
               </a>
               <button type="button" class="btn btn-outline-danger" data-toggle="confirmation" data-placement="right"
-                (click)="delete(addSeller.id)">
+                (click)="delete(seller.id)">
                 <fa-icon [icon]="faTrash"></fa-icon>
               </button>
             </td>

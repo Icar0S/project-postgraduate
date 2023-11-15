@@ -13,7 +13,7 @@ export class CourseListComponent implements OnInit {
   faPencil = faPencil;
   faTrash = faTrash;
 
-  courses: any[] = [];
+  cars: any[] = [];
 
   constructor(private courseService: CourseService) { }
 
@@ -23,7 +23,7 @@ export class CourseListComponent implements OnInit {
   }
 
   async listCourses(): Promise<void> {
-    this.courses = await this.courseService.get<any[]>({
+    this.cars = await this.courseService.get<any[]>({
       url: "http://localhost:3000/getAllCars",
       params: {
 
