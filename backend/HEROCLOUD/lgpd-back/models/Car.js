@@ -12,7 +12,7 @@ const Car = sequelize.define('car', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  old: {
+  year: {
     type: DataTypes.INTEGER,
     allowNull: false,
   }

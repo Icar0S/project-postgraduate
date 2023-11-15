@@ -13,7 +13,7 @@ import { CourseService } from '../course.service';
 })
 export class CourseFormComponent {
   // implementar essa classe toda aqui
-  course: any = {};
+  car: any = {};
   form = new FormGroup({});
   model: any = {};
   //Cria os campos e atribui os valores para serem gerados pelo angular
@@ -31,6 +31,15 @@ export class CourseFormComponent {
             placeholder: 'Nome do Carro',
             required: true,
           },
+        },
+        {
+          key: 'ano',
+          type: 'number',
+          props: {
+            label: 'Ano do Carro',
+            placeholder: 'Ano do Carro',
+            required: true,
+          },
         }
       ]
     }
@@ -46,13 +55,13 @@ export class CourseFormComponent {
 
     this.route.queryParams.subscribe(async (params: any) => {
       if (params.id !== undefined && params.id !== null) {
-        this.course = await this.courseService.get<any>({
+        this.car = await this.courseService.get<any>({
           url: `http://localhost:3000/car/${params.id}`,
           params: {
 
           }
         });
-        this.model = this.course;
+        this.model = this.car;
       } else {
         this.model = {}
       }
@@ -63,7 +72,7 @@ export class CourseFormComponent {
   async onSubmit(): Promise<void> {
     if (this.form.valid) {
       if (this.model?.id !== undefined && this.model?.id !== null) {
-        this.course = await this.courseService.put<any>({
+        this.car = await this.courseService.put<any>({
           url: `http://localhost:3000/updateCar/${this.model?.id}`,
           params: {
 

@@ -7,7 +7,7 @@ router.post("/addSeller", async function (req, res) {
     name: req.body.name,
     car_id: req.body.car_id
   }
-  const seller = await sellerService.saveTeller(sellerModel);
+  const seller = await sellerService.saveSeller(sellerModel);
   return res.status(201).json(seller);
 });
 
@@ -22,7 +22,7 @@ router.get("/seller/:id", async function (req, res) {
 });
 
 router.delete("/deleteSeller/:id", async function (req, res) {
-  const seller = await sellerService.deleteTellerById(req.params.id);
+  const seller = await sellerService.deleteSellerById(req.params.id);
   return res.status(200).json(seller);
 });
 
@@ -32,7 +32,7 @@ router.put("/updateSeller/:id", async function (req, res) {
     car_id: req.body.car_id
   };
 
-  const seller = await sellerService.updateTellerById(req.params.id, sellerModel);
+  const seller = await sellerService.updateSellerById(req.params.id, sellerModel);
   return res.status(200).json(seller);
 });
 

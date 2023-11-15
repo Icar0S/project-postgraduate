@@ -6,7 +6,7 @@ let router = express.Router();
 router.post("/addCar", function (req, res) {
   const carModel = {
     name: req.body.name,
-    old: req.body.old
+    year: req.body.year
   }
   const car = carService.saveCar(carModel);
   return res.status(201).json(car);
@@ -30,6 +30,7 @@ router.delete("/deleteCar/:id", async function (req, res) {
 router.put("/updateCar/:id", async function (req, res) {
   const carModel = {
     name: req.body.name,
+    year: req.body.year
   };
 
   const car = await carService.updateCarById(req.params.id, carModel);

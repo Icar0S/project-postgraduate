@@ -61,6 +61,15 @@ export class UserFormComponent {
           },
         },
         {
+          key: 'phone',
+          type: 'number',
+          props: {
+            label: 'Telefone',
+            placeholder: 'Telefone',
+            required: true,
+          },
+        },
+        {
           key: 'gender',
           type: 'select',
           props: {
@@ -125,6 +134,7 @@ export class UserFormComponent {
     formData.append('first_name', this.model.first_name);
     formData.append('last_name', this.model.last_name);
     formData.append('email', this.model.email);
+    formData.append('phone', this.model.phone);
     formData.append('gender', this.model.gender);
     formData.append('file', fileInput);
 

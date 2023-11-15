@@ -1,6 +1,5 @@
 import { ErrorHandler, Injectable } from '@angular/core';
-import axios from 'axios';
-import { AxiosInstance } from 'axios';
+import axios, { AxiosInstance } from 'axios';
 
 export interface Params {
     [key: string]: any;
@@ -38,21 +37,21 @@ export class TeacherService {
     }
 
     // get
-    public async get<T> (options: GetOptions ) : Promise<T> {
+    public async get<T>(options: GetOptions): Promise<T> {
         try {
             let axiosResponse = await this.axiosClient.request<T>({
                 method: "get",
                 url: options.url,
                 params: options.params
             });
-            return ( axiosResponse.data);
+            return (axiosResponse.data);
         } catch (error) {
-            return ( Promise.reject( this.normalizeError (error)));
+            return (Promise.reject(this.normalizeError(error)));
         }
     }
 
     // put
-    public async put<T> (options: GetOptions ) : Promise<T> {
+    public async put<T>(options: GetOptions): Promise<T> {
         try {
             let axiosResponse = await this.axiosClient.request<T>({
                 method: "put",
@@ -60,14 +59,14 @@ export class TeacherService {
                 params: options.params,
                 data: options.data
             });
-            return ( axiosResponse.data);
+            return (axiosResponse.data);
         } catch (error) {
-            return ( Promise.reject( this.normalizeError (error)));
+            return (Promise.reject(this.normalizeError(error)));
         }
     }
 
     // post
-    public async post<T> (options: GetOptions ) : Promise<T> {
+    public async post<T>(options: GetOptions): Promise<T> {
         try {
             let axiosResponse = await this.axiosClient.request<T>({
                 method: "post",
@@ -75,28 +74,28 @@ export class TeacherService {
                 params: options.params,
                 data: options.data
             });
-            return ( axiosResponse.data);
+            return (axiosResponse.data);
         } catch (error) {
-            return ( Promise.reject( this.normalizeError (error)));
+            return (Promise.reject(this.normalizeError(error)));
         }
     }
 
     // delete
-    public async delete<T> (options: GetOptions ) : Promise<T> {
+    public async delete<T>(options: GetOptions): Promise<T> {
         try {
             let axiosResponse = await this.axiosClient.request<T>({
                 method: "delete",
                 url: options.url,
                 params: options.params
             });
-            return ( axiosResponse.data);
+            return (axiosResponse.data);
         } catch (error) {
-            return ( Promise.reject( this.normalizeError (error)));
+            return (Promise.reject(this.normalizeError(error)));
         }
     }
 
     // normalização de erros
-    private normalizeError(error: any) : ErrorResponse {
+    private normalizeError(error: any): ErrorResponse {
         console.log('Error: ', error)
         this.errorHandler.handleError(error);
 

@@ -13,7 +13,7 @@ import { TeacherService } from '../teacher.service';
   styleUrls: ['./teacher-form.component.scss']
 })
 export class TeacherFormComponent {
-  teacher: any = {};
+  seller: any = {};
   form = new FormGroup({});
   model: any = {};
 
@@ -52,13 +52,13 @@ export class TeacherFormComponent {
 
     this.route.queryParams.subscribe(async (params: any) => {
       if (params.id !== undefined && params.id !== null) {
-        this.teacher = await this.teacherService.get<any>({
+        this.seller = await this.teacherService.get<any>({
           url: `http://localhost:3000/seller/${params.id}`,
           params: {
 
           }
         });
-        this.model = this.teacher;
+        this.model = this.seller;
       } else {
         this.model = {}
       }
@@ -69,7 +69,7 @@ export class TeacherFormComponent {
   async onSubmit(): Promise<void> {
     if (this.form.valid) {
       if (this.model?.id !== undefined && this.model?.id !== null) {
-        this.teacher = await this.teacherService.put<any>({
+        this.seller = await this.teacherService.put<any>({
           url: `http://localhost:3000/updateSeller/${this.model?.id}`,
           params: {
 

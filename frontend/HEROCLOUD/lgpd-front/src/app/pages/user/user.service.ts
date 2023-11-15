@@ -1,6 +1,5 @@
 import { ErrorHandler, Injectable } from "@angular/core";
-import axios from 'axios';
-import { AxiosInstance } from "axios";
+import axios, { AxiosInstance } from "axios";
 
 export interface Params {
   [key: string]: any;

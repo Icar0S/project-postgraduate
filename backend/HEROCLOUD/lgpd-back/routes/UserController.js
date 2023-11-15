@@ -25,8 +25,9 @@ router.post("/addUser", async function (req, res) {
       email: req.body.email,
       phone: req.body.phone,
       gender: req.body.gender,
-      profile_picture: req.file.path
+      profile_picture: req.files
     }
+
 
     if (err) {
       return res.end("Error uploading file.");
@@ -35,10 +36,7 @@ router.post("/addUser", async function (req, res) {
     const user = await userService.saveUser(userModel);
     return res.status(200).json(user);
 
-  }
-
-  );
-
+  });
 });
 
 // buscar todos usuarios
